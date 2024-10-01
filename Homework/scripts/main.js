@@ -32,8 +32,8 @@ console.log(typeof (functionType));
 const firstUserMessage = prompt("Please, write first message");
 const secondUserMessage = prompt("Please, write second message");
 const thirdUserMessage = prompt("Please, write third (last) message");
-console.log(`User's first message is "${firstUserMessage}". 
-User's second message is "${secondUserMessage}" and 
+console.log(`User's first message is "${firstUserMessage}".
+User's second message is "${secondUserMessage}" and
 User's third message is "${thirdUserMessage}"`);
 
 // 3 task
