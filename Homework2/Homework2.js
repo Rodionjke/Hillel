@@ -1,4 +1,3 @@
-
 //1 task
 
 const userName = prompt("Please, enter your name");
@@ -8,13 +7,13 @@ alert(`Hello, ${userNameUpperLetter}${userName.slice(1)}! How are you?`);
 // 2 task
 
 const userNumber = prompt('Please enter your 3-digit number');
-if (userNumber.length !==3) {
+if (userNumber.length !== 3) {
     alert("Number should be with 3 digits. Please reload this page and try again!");
-} else if (+userNumber[0] === +userNumber[1] && +userNumber[1] === +userNumber[2]){
+} else if (+userNumber[0] === +userNumber[1] && +userNumber[1] === +userNumber[2]) {
     alert("All digits are same!")
 } else if (+userNumber[0] === +userNumber[1] || +userNumber[1] === +userNumber[2] || +userNumber[0] === +userNumber[2]) {
     alert("Some of digits are same!");
-} else{
+} else {
     alert("All digits are different!");
 }
 
@@ -58,7 +57,7 @@ if (userFavoriteSport === null) {
 
 let numOrStr = prompt("input number or string");
 console.log(numOrStr)
-switch (true){
+switch (true) {
     case numOrStr === null:
         console.log('Ви скасували');
         break;
