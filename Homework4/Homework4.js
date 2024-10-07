@@ -34,7 +34,7 @@ function doArithmeticMean(...userInputs) {
     for (let arrayValues of userInputs) {
         if (typeof (arrayValues) === 'number') {
             count++
-            sumOfNumbers += userValues;
+            sumOfNumbers += arrayValues;
         } else if (count === 0) {
             alert("No numbers in your input")
             break;
