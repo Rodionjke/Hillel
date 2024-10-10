@@ -28,7 +28,7 @@ console.log(multiplyValue(5)(2));
 //task 3
 
 
-const result = function checkUserNumber() {
+const userResult = function checkUserNumber() {
     let count = 0;
     let userInput = '';
     while (count < 10) {
@@ -45,4 +45,4 @@ const result = function checkUserNumber() {
     alert("You've reached maximum tries without correct numbers")
 }
 
-console.log(`Your number is ${result()}`);
+console.log(`Your number is ${userResult()}`);
