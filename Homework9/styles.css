@@ -1,0 +1,14 @@
+
+.new_color {
+    color: red;
+}
+
+.main_table {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    color: black;
+}
+.diagonal_color {
+    background-color: yellow;
+}
