@@ -1,0 +1,89 @@
+body {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-image: url("images/background_img.jpg");
+    background-position: center;
+    content: "";
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+.date_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.date_block img {
+    animation: rotateAnimation 10s linear infinite;
+}
+
+.time_block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+.temperature_block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px 85px;
+}
+
+.rotating {
+    animation: rotateAnimation 1s linear;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+.time {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.temperature {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 2.2em;
+    font-weight: 400;
+}
+
+.city_style {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.details {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
