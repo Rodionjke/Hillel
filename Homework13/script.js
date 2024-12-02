@@ -41,7 +41,6 @@ function addElementsToTask(taskElement, task, isChecked) {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-
     const task = userInput.value.trim();
     const uuid = +new Date();
 
