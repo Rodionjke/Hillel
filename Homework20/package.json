@@ -1,0 +1,27 @@
+{
+  "name": "homework18",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "jquery": "^3.7.1",
+    "mini-css-extract-plugin": "^2.9.2",
+    "sass": "^1.82.0",
+    "sass-loader": "^16.0.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
