@@ -37,7 +37,7 @@ app.delete('/todos/:id', (req, res) => {
             if (response.deleteCount === 0) {
                 res.status(404).send({message: 'Todo were not found'})
             } else {
-                res.status(404).send(response)
+                res.status(200).send(response)
             }
         }
     )
