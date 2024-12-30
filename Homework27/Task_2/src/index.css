@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-title {
+  text-align: center;
+  margin: 50px 0;
+  color: #1565c0
+}
+
+.todo-form {
+  width: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.input-width {
+  width: 400px;
+}
+
+.main-button {
+  height: 40px;
+  width: auto;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
