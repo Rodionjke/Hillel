@@ -4,7 +4,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import {useSelector} from 'react-redux';
-import selectors from "../redux/slice/selectors.js";
+import selectors from "../../redux/slice/selectors.js";
 
 const TodoList = () => {
     const items = useSelector(selectors.items);

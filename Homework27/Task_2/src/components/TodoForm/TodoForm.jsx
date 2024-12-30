@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Input from "../Input/Input.jsx";
 import "../../index.css";
 import {useDispatch} from 'react-redux';
-import {addItem} from '../redux/slice/todosSlice.js';
+import {addItem} from '../../redux/slice/todosSlice.js';
 
 const TodoForm = () => {
     const {control, handleSubmit, reset, formState: {errors}} = useForm();
