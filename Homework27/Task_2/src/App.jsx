@@ -4,7 +4,7 @@ import store from "./redux/store.js";
 import Title from "./components/Title/Title.jsx";
 import {Container} from "@mui/material";
 import TodoList from "./components/TodoList/TodoList";
-
+import Footer from "./components/Footer/Footer.jsx";
 function App() {
     return (
         <Provider store={store}>
@@ -12,6 +12,7 @@ function App() {
                 <Title/>
                 <TodoForm/>
                 <TodoList/>
+                <Footer/>
             </Container>
         </Provider>
     );
