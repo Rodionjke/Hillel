@@ -1,0 +1,14 @@
+:root {
+  line-height: 1.5;
+  color: black;
+  background-image: url("assets/background_img.jpg");
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
