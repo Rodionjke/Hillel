@@ -106,7 +106,7 @@ const Panel = () => {
                                 <TableCell>{product.id}</TableCell>
                                 <TableCell>
                                     <Avatar
-                                        src={product.image}
+                                        src={product.img}
                                         alt={product.name}
                                         variant="square"
                                         sx={{width: 56, height: 56}}

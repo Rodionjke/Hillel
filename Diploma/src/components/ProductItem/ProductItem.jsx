@@ -9,7 +9,7 @@ const ProductItem = ({product}) => {
                 component="img"
                 alt={product.name}
                 height="250"
-                image={product.image}
+                image={product.img}
                 sx={{objectFit: 'contain'}}
             />
             <CardContent>
