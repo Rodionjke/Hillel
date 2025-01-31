@@ -23,7 +23,7 @@ const Modal = () => {
                 dispatch(setFormValue({field: 'category', value: product.category}));
                 dispatch(setFormValue({field: 'quantity', value: product.quantity}));
                 dispatch(setFormValue({field: 'price', value: product.price}));
-                dispatch(setFormValue({field: 'img', value: product.image}));
+                dispatch(setFormValue({field: 'img', value: product.img}));
             }
         } else if (type === 'add') {
             dispatch(setFormValue({field: 'name', value: ''}));

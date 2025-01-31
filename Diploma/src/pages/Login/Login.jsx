@@ -25,11 +25,6 @@ const Login = () => {
             navigate('/panel');
         }
     }, [isAuthenticated, navigate]);
-    useEffect(() => {
-        if (loginError) {
-            alert('Access Denied. Wrong login or password');
-        }
-    }, [loginError]);
     const validateAdmin = (values) => {
         return {
             username: requiredValidator(values.username),
@@ -202,6 +197,11 @@ const Login = () => {
                                     />
                                 )}
                             </Field>
+                            {loginError && (
+                                <Typography color="error" sx={{textAlign: 'center', mt: 2}}>
+                                    Access Denied. Wrong login or password.
+                                </Typography>
+                            )}
                             <Box
                                 sx={{
                                     display: 'flex',

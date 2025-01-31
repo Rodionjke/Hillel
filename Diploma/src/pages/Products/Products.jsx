@@ -1,24 +1,11 @@
-import {useSelector, useDispatch} from "react-redux";
-import {useEffect} from "react";
-import {fetchProductsRequest} from "../../redux/slices/productSlice.js";
+import useFetchProducts from '../../hooks/useFetchProducts';
 import {Grid, Typography, CircularProgress, Box, ThemeProvider} from "@mui/material";
-import {selectProducts, selectLoading, selectError} from "../../redux/selectors";
 import ProductItem from "../../components/ProductItem/ProductItem.jsx";
 import theme from "../../theme";
 import backgroundImage from '../../images/background.jpg';
-import {checkAuth} from "../../validators/validators.js";
-
 
 const Products = () => {
-    const dispatch = useDispatch();
-    const items = useSelector(selectProducts);
-    const loading = useSelector(selectLoading);
-    const error = useSelector(selectError);
-
-    useEffect(() => {
-        checkAuth();
-        dispatch(fetchProductsRequest());
-    }, [dispatch]);
+    const { products, loading, error } = useFetchProducts();
 
     if (loading) return <CircularProgress sx={{margin: 'auto', display: 'block'}}/>;
     if (error) return <Typography color="error" variant="h6" align="center">Error: {error}</Typography>;
@@ -51,7 +38,7 @@ const Products = () => {
                         Products
                     </Typography>
                     <Grid container spacing={4}>
-                        {items.map((product) => (
+                        {products.map((product) => (
                             <Grid item xs={12} sm={6} md={4} key={product.id}>
                                 <ProductItem product={product}/>
                             </Grid>

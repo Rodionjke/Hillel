@@ -1,58 +1,49 @@
-import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {fetchProductsRequest, openModal} from '../../redux/slices/productSlice.js';
+import useFetchProducts from '../../hooks/useFetchProducts';
+import {useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
 import {
-    Button,
-    Typography,
     Avatar,
-    IconButton,
-    Table,
-    TableBody,
+    Box,
+    Button,
+    CircularProgress, IconButton,
+    Table, TableBody,
     TableCell,
     TableContainer,
     TableHead,
     TableRow,
-    Box
-} from '@mui/material';
+    Typography
+} from "@mui/material";
+import {openModal} from "../../redux/slices/productSlice.js";
+import {selectModal} from "../../redux/selectors.js";
+import DeleteModal from "../../components/DeleteModal/DeleteModal.jsx";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Modal from "../../components/Modal/Modal.jsx";
-import DeleteModal from "../../components/DeleteModal/DeleteModal.jsx";
-import CircularProgress from '@mui/material/CircularProgress';
-import {selectProducts, selectModal, selectLoading} from "../../redux/selectors.js";
-import {useNavigate} from 'react-router-dom';
-import {checkAuth} from '../../validators/validators.js';
+import Modal from '../../components/Modal/Modal.jsx'
 
 const Panel = () => {
+    const { products, loading,} = useFetchProducts();
     const dispatch = useDispatch();
-    const products = useSelector(selectProducts);
-    const {loading} = useSelector(selectLoading);
-    const {isOpen, type, productId} = useSelector(selectModal);
+    const { isOpen, type, productId } = useSelector(selectModal);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        checkAuth();
-        dispatch(fetchProductsRequest());
-    }, [dispatch]);
 
     const goToProducts = () => {
         navigate('/products');
     };
 
     const openEditModal = (product) => {
-        dispatch(openModal({type: 'edit', productId: product.id}));
+        dispatch(openModal({ type: 'edit', productId: product.id }));
     };
 
     const openAddModal = () => {
-        dispatch(openModal({type: 'add', productId: null}));
+        dispatch(openModal({ type: 'add', productId: null }));
     };
 
     const openDeleteModal = (id) => {
-        dispatch(openModal({type: 'delete', productId: id}));
+        dispatch(openModal({ type: 'delete', productId: id }));
     };
 
     if (loading) return (
-        <Box sx={{display: 'flex', justifyContent: 'center'}}>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <CircularProgress color="primary"/>
         </Box>
     );
@@ -65,17 +56,17 @@ const Panel = () => {
             padding: '50px',
         }}>
             <Typography variant="h4" align="center" color="#fff"
-                        sx={{mb: '30px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>
+                        sx={{ mb: '30px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
                 Products Table
             </Typography>
             <Box sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
             }}>
-                <Button variant="contained" onClick={openAddModal} sx={{mb: '30px'}}>
+                <Button variant="contained" onClick={openAddModal} sx={{ mb: '30px' }}>
                     Add Product
                 </Button>
-                <Button variant="contained" onClick={goToProducts} sx={{mb: '30px'}}>
+                <Button variant="contained" onClick={goToProducts} sx={{ mb: '30px' }}>
                     Preview Products
                 </Button>
             </Box>
@@ -109,7 +100,7 @@ const Panel = () => {
                                         src={product.img}
                                         alt={product.name}
                                         variant="square"
-                                        sx={{width: 56, height: 56}}
+                                        sx={{ width: 56, height: 56 }}
                                     />
                                 </TableCell>
                                 <TableCell>{product.category}</TableCell>
@@ -118,10 +109,10 @@ const Panel = () => {
                                 <TableCell>{product.price}</TableCell>
                                 <TableCell>
                                     <IconButton onClick={() => openEditModal(product)}>
-                                        <EditIcon/>
+                                        <EditIcon />
                                     </IconButton>
                                     <IconButton onClick={() => openDeleteModal(product.id)}>
-                                        <DeleteIcon/>
+                                        <DeleteIcon />
                                     </IconButton>
                                 </TableCell>
                             </TableRow>
@@ -129,8 +120,8 @@ const Panel = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            {isOpen && (type === 'edit' || type === 'add') && <Modal/>}
-            {isOpen && type === 'delete' && <DeleteModal productId={productId}/>}
+            {isOpen && (type === 'edit' || type === 'add') && <Modal />}
+            {isOpen && type === 'delete' && <DeleteModal productId={productId} />}
         </Box>
     );
 };
